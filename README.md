@@ -5,5 +5,4 @@ Authors: Jakub Miženko
 	     Alex Gajdoš
 	     Marc Bafalluy Gesti
 
-
 License: GNU GPL v3
