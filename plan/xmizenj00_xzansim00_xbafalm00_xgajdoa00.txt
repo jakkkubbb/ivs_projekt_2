@@ -18,20 +18,24 @@ Stanovené termíny:
 
 
 Rozdelenie úloh:
-	Jakub Miženko:		1. Implementácia grafického užívateľského rozhrania
+	Jakub Miženko:		
+				1. Implementácia grafického užívateľského rozhrania
 				2. Integrácia GUI s matematickou knižnicou
 				3. Implementácia obecnej odmocniny a absolútnej hodnoty
 				4. Mockup budúcej verzie aplikácie
 
-	Alex Gajdoš:		1. Vytvorenie README súboru
+	Alex Gajdoš:		
+				1. Vytvorenie README súboru
 				2. Implementácia faktoriálu a umocňovania s prirodzenými exponentmi
 				3. Testovanie aplikácie na virtuálnom stroji
 
-	Simon Zán:		1. Vytvorenie testov pre matematickú knižnicu
+	Simon Zán:		
+				1. Vytvorenie testov pre matematickú knižnicu
 				2. Implementácia programu na výpočet smerodajnej odchýlky
 				3. Doxygen generovanie programovej dokumentácie
 
-	Marc Bafalluy:		1. Implementácia základných matematických funkcií knižnice
+	Marc Bafalluy:		
+				1. Implementácia základných matematických funkcií knižnice
 				2. Vytvorenie Makefile súboru
 				3. Vytvorenie užívateľskej dokumentácie
 
