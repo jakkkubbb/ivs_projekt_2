@@ -1,21 +1,47 @@
-Plán projektu - Grafická kalkulačka
+Plán projektu - Aplikácia grafická kalkulačka
 
-1. Stanovené termíny:
-	x.x.2025 - Začiatok projektu, definícia požiadaviek 
-	x.x.2025 - Výber technológií a návrh
- 	x.x.2025 - Implementácia grafického užívateľského rozhrania
-	x.x.2025 - Implementácia matematickej knižnice
-	x.x.2025 - Testovanie a oprava chýb
-	x.x.2025 - Dokončenie programovej a užívateľskej dokumentácie
-	x.x.2025 - Finálne testovanie
-	x.x.2025 - Odovzdanie projektu
 
-2. Rozdelenie úloh:
-	...............
 
-3. Komunikačné kanálu a pravidlá komunikácie:
-	..........................
+Stanovené termíny:
+	6.3.2025 - Začiatok projektu, definícia požiadaviek (4 dní)
+	10.3.2025 - Výber technológií a návrh aplikácie (10 dní)
+ 	20.3.2025 - Vytvorenie testov pre matematickú knižnicu (1 týždeň)
+	25.3.2025 - Implementácia matematickej knižnice (12 dní)
+	30.3.2025 - Implementácia grafického užívateľského rozhrania (5 dní)
+	6.4.2025 - Integrácia GUI s matematickou knižnicou (2 dni)
+	8.4.2025 - Implementácia programu na výpočet smerodajnej odchýlky (1 týždeň)
+	15.4.2025 - Testovanie aplikácie na virtuálnom stroji (2 dni)
+	17.4.2025 - Vytvorenie programovej a užívateľskej dokumentácie (12 dní)
+	21.4.2025 - Mockup budúcej verzie aplikácie (7 dní)
+	24.4.2025 - Finálne testovanie a oprava chýb (6 dní)
+	30.4.2025 - Odovzdanie projektu
 
-4. Systém správy verzií a hosting:
-	.......................
+
+Rozdelenie úloh:
+	Jakub Miženko:	1. Implementácia grafického užívateľského rozhrania
+				 	2. Integrácia GUI s matematickou knižnicou
+					3. Implementácia obecnej odmocniny a absolútnej hodnoty
+					4. Mockup budúcej verzie aplikácie
+
+	Alex Gajdoš:	1. Vytvorenie README súboru
+					2. Implementácia faktoriálu a umocňovania s prirodzenými exponentmi
+					3. Testovanie aplikácie na virtuálnom stroji
+
+	Simon Zán:		1. Vytvorenie testov pre matematickú knižnicu
+					2. Implementácia programu na výpočet smerodajnej odchýlky
+					3. Doxygen generovanie programovej dokumentácie
+
+	Marc Bafalluy:	1. Implementácia základných matematických funkcií knižnice
+					2. Vytvorenie Makefile súboru
+					3. Vytvorenie užívateľskej dokumentácie
+
+
+Komunikačné kanály a pravidlá komunikácie:
+	Zvolené komunikačné kanaly:		Discord, E-mail
+
+Systém správy verzií a hosting:
+	Systém pre správu verzií:	GIT
+	Hosting:					GitHub
+	
+	K našemu repozitáru sa možno dostať cez: https://github.com/jakkkubbb/ivs_projekt_2
 
