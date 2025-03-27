@@ -13,25 +13,29 @@ def div(a, b):
     if b != 0:
         return a / b
     else:
-        print("ERROR")
+        return "ERR"
+    
+def abs_v(n):
+    return abs(n)
 
-def pow(base, exponent):
+def power(base, exponent):
     return base ** exponent
 
 def root(base, root_exponent):
     if base < 0 and root_exponent % 2 == 0:
-        print("ERROR")
+        return "ERR"
     else:
         return math.pow(base, 1/root_exponent)
 
 def factorial(n):
     if n < 0:
-        print("ERROR")
+        return "ERR"
+    if type(n) != int:
+        return "ERR"
     result = 1
     for i in range(1, n + 1):
         result *= i
     return result
 
-def abs_v(n):
-    return abs(n)
+
 
