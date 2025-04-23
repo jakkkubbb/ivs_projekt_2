@@ -1,5 +1,5 @@
 import tkinter as tk
-
+from calc import insert_value, clear_entry, delete_last, calculate
 
 root = tk.Tk()
 root.title("Calculator")
@@ -19,7 +19,7 @@ root.resizable(False, False)
 
 
 
-text_entry = tk.Text(root, height=3, fg="white",background=color1, width=20,font=("Verdana", 24))
+text_entry = tk.Text(root, height=3, fg="white",background=color1, width=20,font=("Verdana", 24),state="disabled")
 text_entry.grid(columnspan=8)
 
 
@@ -50,7 +50,7 @@ def help_popup():
     help_window.title("Help")
     help_window.geometry("500x560")
     help_window.configure(bg=color1)
-    help_popup_ok = tk.Button(help_window, text="OK", command=help_window.destroy, background=color3, foreground=color4, font=("Verdana", 12))
+    help_popup_ok = tk.Button(help_window, text="OK", command=help_window.destroy, background=color3, foreground=color4, state="disabled", font=("Verdana", 12))
     help_popup_ok.pack(pady=20)
     help_label = tk.Label(help_window, text="Help", font=("Verdana", 20), background=color1, foreground=color4)
     help_label.pack(pady=20)
@@ -81,7 +81,7 @@ def about_popup():
     about_window.title("About")
     about_window.geometry("700x400")
     about_window.configure(bg=color1)
-    about_popup_ok = tk.Button(about_window, text="OK", command=about_window.destroy, background=color3, foreground=color4, font=("Verdana", 12))
+    about_popup_ok = tk.Button(about_window, text="OK", command=about_window.destroy, background=color3, foreground=color4, font=("Verdana", 12),state="disabled")
     about_popup_ok.pack(pady=20)
     about_label = tk.Label(about_window, text="About", font=("Verdana", 20), background=color1, foreground=color4)
     about_label.pack(pady=20)
@@ -97,6 +97,27 @@ def about_popup():
 
 
 
+def handle_keypress(event):
+    
+    key = event.char
+    if key in "0123456789+-*/().,":
+        insert_value(text_entry, key)
+    elif key == "^":  
+        insert_value(text_entry, "power(")
+    elif key == "r":  
+        insert_value(text_entry, "sqrt(")
+    elif key == "!": 
+        insert_value(text_entry, "factorial(")
+    elif key == "\r":
+        calculate(text_entry)
+    elif key == "\b": 
+        delete_last(text_entry)
+    elif key == "c" or key == "C": 
+        clear_entry(text_entry)
+
+
+root.bind("<Key>", handle_keypress)
+
 
 BTN_EXP = tk.Button(root,
                 background=color5,
@@ -109,7 +130,8 @@ BTN_EXP = tk.Button(root,
                 width=7,
                 height=2,
                 font=("Verdana", 15),
-                borderwidth=0)
+                borderwidth=0,
+                command=lambda: insert_value(text_entry, "power("))
 BTN_EXP.grid(row=2, column=2, pady=2)
 
 
@@ -124,36 +146,39 @@ BTN_SQRT = tk.Button(root,
                 width=7,
                 height=2,
                 borderwidth=0,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, "sqrt("))
 BTN_SQRT.grid(row=2, column=1,  pady=2)
 
-BTN_PI = tk.Button(root,
+BTN_BRC_R = tk.Button(root,
                 background=color5,
                 foreground=color4,
                 activebackground=color5,
                 activeforeground=color4,
                 highlightthickness=2,
                 highlightcolor='white',
-                text="π", 
+                text=")", 
                 width=7,
                 height=2,
                 borderwidth=0,
-                font=("Verdana", 15))
-BTN_PI.grid(row=3, column=1, pady=2)
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, ")"))
+BTN_BRC_R.grid(row=3, column=1, pady=2)
 
-BTN_EUL = tk.Button(root,
+BTN_SEP = tk.Button(root,
                 background=color5,
                 foreground=color4,
                 activebackground=color5,
                 activeforeground=color4,
                 highlightthickness=2,
                 highlightcolor='white',
-                text="e", 
+                text=",", 
                 width=7,
                 height=2,
                 borderwidth=0,
-                font=("Verdana", 15))
-BTN_EUL.grid(row=3, column=2, pady=2)
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, ","))
+BTN_SEP.grid(row=3, column=2, pady=2)
 
 BTN_ABS = tk.Button(root,
                 background=color5,
@@ -166,7 +191,8 @@ BTN_ABS = tk.Button(root,
                 width=7,
                 borderwidth=0,
                 height=2,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, "abs("))
 BTN_ABS.grid(row=3, column=3, pady=2)
 
 BTN_DEL = tk.Button(root,
@@ -180,7 +206,8 @@ BTN_DEL = tk.Button(root,
                 width=7,
                 height=2,
                 borderwidth=0,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: delete_last(text_entry))
 BTN_DEL.grid(row=2, column=3, pady=2)
 
 
@@ -195,7 +222,8 @@ BTN_CLR = tk.Button(root,
                 width=7,
                 borderwidth=0,
                 height=2,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: clear_entry(text_entry))
 BTN_CLR.grid(row=2, column=4, pady=2)
 
 BTN1 = tk.Button(root,
@@ -209,7 +237,8 @@ BTN1 = tk.Button(root,
                 width=7,
                 borderwidth=0,
                 height=2,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, 7))
 BTN1.grid(row=4, column=1, pady=2)
 
 BTN2 = tk.Button(root,
@@ -223,7 +252,8 @@ BTN2 = tk.Button(root,
                 width=7,
                 height=2,
                 borderwidth=0,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, 8))
 BTN2.grid(row=4, column=2, pady=2)
 
 BTN3 = tk.Button(root,
@@ -237,7 +267,8 @@ BTN3 = tk.Button(root,
                 width=7,
                 height=2,
                 borderwidth=0,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, 9))
 BTN3.grid(row=4, column=3, pady=2)
 
 BTN4 = tk.Button(root,
@@ -251,7 +282,8 @@ BTN4 = tk.Button(root,
                 width=7,
                 height=2,
                 borderwidth=0,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, 4))
 BTN4.grid(row=5, column=1, pady=2)
 
 BTN5 = tk.Button(root,
@@ -265,7 +297,8 @@ BTN5 = tk.Button(root,
                 width=7,
                 height=2,
                 borderwidth=0,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, 5))
 BTN5.grid(row=5, column=2, pady=2)
 
 BTN6 = tk.Button(root,
@@ -279,7 +312,8 @@ BTN6 = tk.Button(root,
                 width=7,
                 height=2,
                 borderwidth=0,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, 6))
 BTN6.grid(row=5, column=3)
 
 BTN7 = tk.Button(root,
@@ -293,7 +327,8 @@ BTN7 = tk.Button(root,
                 width=7,
                 height=2,
                 borderwidth=0,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, 1))
 BTN7.grid(row=6, column=1, pady=2)
 
 BTN8 = tk.Button(root,
@@ -307,7 +342,8 @@ BTN8 = tk.Button(root,
                 width=7,
                 height=2,
                 borderwidth=0,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, 2))
 BTN8.grid(row=6, column=2, pady=2)
 
 BTN9 = tk.Button(root,
@@ -321,7 +357,8 @@ BTN9 = tk.Button(root,
                 width=7,
                 borderwidth=0,
                 height=2,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, 3))
 BTN9.grid(row=6, column=3, pady=2)
 
 BTN0 = tk.Button(root,
@@ -335,7 +372,8 @@ BTN0 = tk.Button(root,
                 width=7,
                 borderwidth=0,
                 height=2,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, 0))
 BTN0.grid(row=7, column=2, pady=2)
 
 BTN_PLUS = tk.Button(root,
@@ -349,7 +387,8 @@ BTN_PLUS = tk.Button(root,
                 width=7,
                 borderwidth=0,
                 height=2,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, "+"))
 BTN_PLUS.grid(row=4, column=4, pady=2)
 
 BTN_SUB = tk.Button(root,
@@ -363,7 +402,8 @@ BTN_SUB = tk.Button(root,
                 width=7,
                 borderwidth=0,
                 height=2,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, "-"))
 BTN_SUB.grid(row=5, column=4, pady=2)
 
 BTN_DIV = tk.Button(root,
@@ -377,7 +417,8 @@ BTN_DIV = tk.Button(root,
                 width=7,
                 borderwidth=0,
                 height=2,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, "/"))
 BTN_DIV.grid(row=6, column=4, pady=2)
 
 BTN_MUL = tk.Button(root,
@@ -391,7 +432,8 @@ BTN_MUL = tk.Button(root,
                 width=7,
                 borderwidth=0,
                 height=2,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, "*"))
 BTN_MUL.grid(row=3, column=4, pady=2)
 
 BTN_DOT = tk.Button(root,
@@ -405,7 +447,8 @@ BTN_DOT = tk.Button(root,
                 width=7,
                 borderwidth=0,
                 height=2,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, "."))
 BTN_DOT.grid(row=7, column=3, pady=2)
 
 BTN_FAC = tk.Button(root,
@@ -419,7 +462,8 @@ BTN_FAC = tk.Button(root,
                 width=7,
                 borderwidth=0,
                 height=2,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: insert_value(text_entry, "fac("))
 BTN_FAC.grid(row=7, column=1, pady=2)
 
 BTN_EQ = tk.Button(root,
@@ -431,7 +475,8 @@ BTN_EQ = tk.Button(root,
                 width=7,
                 borderwidth=0,
                 height=2,
-                font=("Verdana", 15))
+                font=("Verdana", 15),
+                command=lambda: calculate(text_entry))
 BTN_EQ.grid(row=7, column=4, pady=2)
 
 BTN_HELP = tk.Button(root,
@@ -503,16 +548,19 @@ BTN_EXP.bind("<Enter>", on_enter_spec)
 BTN_EXP.bind("<Leave>", on_leave_spec)
 BTN_SQRT.bind("<Enter>", on_enter_spec)
 BTN_SQRT.bind("<Leave>", on_leave_spec)
-BTN_PI.bind("<Enter>", on_enter_spec)
-BTN_PI.bind("<Leave>", on_leave_spec)
-BTN_EUL.bind("<Enter>", on_enter_spec)
-BTN_EUL.bind("<Leave>", on_leave_spec)
+BTN_BRC_R.bind("<Enter>", on_enter_spec)
+BTN_BRC_R.bind("<Leave>", on_leave_spec)
+BTN_SEP.bind("<Enter>", on_enter_spec)
+BTN_SEP.bind("<Leave>", on_leave_spec)
 BTN_ABS.bind("<Enter>", on_enter_spec)
 BTN_ABS.bind("<Leave>", on_leave_spec)
 BTN_DEL.bind("<Enter>", on_enter_spec)
 BTN_DEL.bind("<Leave>", on_leave_spec)
 BTN_CLR.bind("<Enter>", on_enter_spec)
 BTN_CLR.bind("<Leave>", on_leave_spec)
+
+
+
 
 
 root.mainloop()
