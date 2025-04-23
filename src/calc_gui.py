@@ -75,7 +75,7 @@ def help_popup():
     
     help_window = tk.Toplevel(root)
     help_window.title("Help")
-    help_window.geometry("500x560")
+    help_window.geometry("500x580")
     help_window.configure(bg=color1)
     help_popup_ok = tk.Button(help_window, text="OK", command=help_window.destroy, background=color3, foreground=color4, font=("TkDefaultFont", 12))
     help_popup_ok.pack(pady=20)
@@ -83,24 +83,37 @@ def help_popup():
     help_label.pack(pady=20)
     help_text = tk.Text(help_window, height=45, fg="white", background=color1, width=50, font=("TkDefaultFont", 12))
     help_text.insert(tk.END, "This is a simple calculator.\n\n"
-                             "Use the buttons to perform calculations.\n\n"
+                             "Use the buttons or keyboard to perform calculations.\n\n"
                              "For example:\n"
                              "1. Enter a number\n"
                              "2. Select an operation (+, -, *, /)\n"
                              "3. Enter another number\n"
-                             "4. Press '=' to get the result\n\n"
+                             "4. Press '=' or 'Enter' to get the result\n\n"
                              "You can also use:\n"
                              "  • x^n for exponentiation\n"
-                                "      - power(base,exponent)\n\n"
+                                "      - power(base,exponent)\n"
+                                "      - Use '^' on your keyboard or press the button\n"
+                                "        for exponentation\n\n"
                              "  • n√x for n-th square root of x\n"
-                                "      - sqrt(base,root_exponent)\n\n"
+                                "      - sqrt(base,root_exponent)\n"
+                                "      - Use 'r' on your keyboard or press the button\n"
+                                "        for n-th square root of x\n\n"
                              "  • |x| for absolute value\n"
-                                "      - abs(x)\n\n"
+                                "      - abs(x)\n"
+                                "      - Use 'a' on your keyboard or press the button\n"
+                                "        for absolute value\n\n"
                              "  • n! for factorial\n"
-                                "      - factorial(n)\n\n"
-                             "  • , and ) for separator and closing bracket\n\n"
-                             "Press 'C' to clear the entry.\n"
-                             "Press 'DEL' to delete the last character.\n\n")
+                                "      - factorial(n)\n"
+                                "      - Use '!' on your keyboard or press the button\n"
+                                "        for factorial\n\n"
+                             "  • ',' and ')' for separator and closing bracket\n\n"
+                             "  • 'Ans' to use the last result in the next calculation.\n\n"
+                             "      - Use 'A' on your keyboard or press the button\n"
+                             "        for last result\n\n"
+                             "  • 'C' to clear the entry.\n"
+                             "      - Use 'C' or you keyboard or press the button\n\n"
+                             "  • 'DEL' to delete the last character.\n"
+                             "      - Use '' or you keyboard or press the button\n")
 
     help_text.pack(pady=20)
     help_text.config(state="disabled")
@@ -139,11 +152,15 @@ def handle_keypress(event):
     elif key == "r":  
         insert_value(text_entry, "sqrt(")
     elif key == "!": 
-        insert_value(text_entry, "factorial(")
+        insert_value(text_entry, "fac(")
+    elif key == "a":
+        insert_value(text_entry, "abs(")
     elif key == "\r":
         calculate(text_entry)
     elif key == "\b": 
         delete_last(text_entry)
+    elif key == 'A':
+        insert_value(text_entry, "ans")
     elif key == "c" or key == "C": 
         clear_entry(text_entry)
 
@@ -525,7 +542,7 @@ BTN_ANS = tk.Button(root,
                 width=6,
                 height=1,
                 font=("TkDefaultFont", 15),
-                command=lambda: insert_value(text_entry, get_ans(text_entry)))
+                command=lambda: insert_value(text_entry, "ans"))
 BTN_ANS.grid(row=8, column=4, pady=2)
 
 BTN_HELP = tk.Button(root,
