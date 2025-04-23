@@ -1,3 +1,12 @@
+"""
+@file : math_lib.py
+@brief : This file contains our custom math library with basic operations
+@details : The library includes functions for addition, subtraction, multiplication,
+        division, absolute value, power, root, and factorial.
+@author : Marc Baffaluy Gesti
+@date : PLACEHOLDER
+
+"""
 
 
 def sum(a, b):
@@ -66,8 +75,8 @@ def power(base, exponent):
 def root(base, root_exponent):
     """
     @brief : function to calculate the root of a number
-    @param a : first number
-    @param b : second number
+    @param base : base number
+    @param root_exponent : the root exponent
     @return : returns the root of base with the given exponent
     """
     if base < 0 and root_exponent % 2 == 0:

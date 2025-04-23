@@ -1,5 +1,11 @@
-
-
+"""
+@file : calc_gui.py
+@brief : This file contains the GUI for the calculator
+@details : The GUI is built using tkinter and includes buttons for all the operations
+@author : Jakub Miženko
+@date : PLACEHOLDER
+@todo : Change root symbol so LaTeX can be used
+"""
 
 import tkinter as tk
 
@@ -49,6 +55,13 @@ def on_leave_eq(e):
 
 
 def help_popup():
+    """
+    @brief : function to create a help popup window
+    @details : The function creates a new window with a help message and an OK button to close the window.
+    @param : None
+    @return : None
+    """
+    
     help_window = tk.Toplevel(root)
     help_window.title("Help")
     help_window.geometry("500x550")
@@ -477,6 +490,8 @@ BTN_DEL.bind("<Enter>", on_enter_spec)
 BTN_DEL.bind("<Leave>", on_leave_spec)
 BTN_CLR.bind("<Enter>", on_enter_spec)
 BTN_CLR.bind("<Leave>", on_leave_spec)
+
+
 
 
 root.mainloop()

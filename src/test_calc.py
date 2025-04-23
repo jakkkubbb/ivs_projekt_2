@@ -1,3 +1,11 @@
+"""
+@file : test_calc.py
+@brief : This file contains the unit tests for our custom math library
+@author : Simon Zán
+@date : 2025-04-18
+@todo : Maybe add more tests for edge cases
+"""
+
 import unittest
 
 from math_lib import *
