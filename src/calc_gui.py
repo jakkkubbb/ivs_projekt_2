@@ -1,10 +1,15 @@
 import tkinter as tk
 from calc import insert_value, clear_entry, delete_last, calculate
+import sys
+
 
 root = tk.Tk()
 root.title("Calculator")
-root.geometry("400x600")
 
+if sys.platform.startswith('win'):
+    root.geometry('400x600')
+else:
+    root.geometry('480x560')
 
 color1='#020f12'
 color2='#05d7ff'
