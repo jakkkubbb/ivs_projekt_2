@@ -5,23 +5,17 @@
 @author Jakub Miženko
 @date 2025-04-23
 @todo Change root symbol so LaTeX can be used
+@details The file also contains "variables" for each button, but we decided
+that those are hidden to the documentation
 """
 
 import tkinter as tk
 from calc import insert_value, clear_entry, delete_last, calculate,get_ans
 import sys
 
-
-
-
-
-
-
+# @cond DOXYGEN_IGNORE
 root = tk.Tk()
 root.title("Calculator")
-
-
-
 color1='#020f12'
 color2='#05d7ff'
 color3='#041c21'
@@ -43,7 +37,7 @@ text_entry.grid(columnspan=8)
 text_entry.insert("1.0", "0")
 text_entry.config(state="disabled")
 
-
+# @endcond
 
 
 def on_enter(e):
@@ -198,7 +192,7 @@ def handle_keypress(event):
 
 root.bind("<Key>", handle_keypress)
 
-
+# @cond DOXYGEN_IGNORE
 BTN_EXP = tk.Button(root,
                 background=color5,
                 foreground=color4,
@@ -657,6 +651,7 @@ BTN_CLR.bind("<Enter>", on_enter_spec)
 BTN_CLR.bind("<Leave>", on_leave_spec)
 
 
+# @endcond
 
 
 root.mainloop()

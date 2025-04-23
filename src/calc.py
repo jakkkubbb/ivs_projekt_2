@@ -10,9 +10,17 @@ with a pop-up window, and input can be given with buttons or keyboard.
 import tkinter as tk
 from math_lib import sum, sub, mul, div, power, abs_v, root, factorial
 
-
+"""
+@var ans
+@brief variable to store the last calculated value
+"""
 ans = None
+"""
+@var calculated
+@brief variable to store if the last calculation was successful
+"""
 calculated = False
+
 
 def insert_value(entry_widget, value):
     """
@@ -93,6 +101,9 @@ def delete_last(entry_widget):
 
 
 def get_ans(entry_widget):
+    """
+    @brief returns the last calculated value
+    """
     global ans
     if ans is None:
         return "0"
