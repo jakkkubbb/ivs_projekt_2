@@ -1,6 +1,3 @@
-
-
-
 import tkinter as tk
 
 
@@ -51,13 +48,13 @@ def on_leave_eq(e):
 def help_popup():
     help_window = tk.Toplevel(root)
     help_window.title("Help")
-    help_window.geometry("500x550")
+    help_window.geometry("500x560")
     help_window.configure(bg=color1)
     help_popup_ok = tk.Button(help_window, text="OK", command=help_window.destroy, background=color3, foreground=color4, font=("Verdana", 12))
     help_popup_ok.pack(pady=20)
     help_label = tk.Label(help_window, text="Help", font=("Verdana", 20), background=color1, foreground=color4)
     help_label.pack(pady=20)
-    help_text = tk.Text(help_window, height=40, fg="white", background=color1, width=50, font=("Verdana", 12))
+    help_text = tk.Text(help_window, height=45, fg="white", background=color1, width=50, font=("Verdana", 12))
     help_text.insert(tk.END, "This is a simple calculator.\n\n"
                              "Use the buttons to perform calculations.\n\n"
                              "For example:\n"
@@ -69,11 +66,34 @@ def help_popup():
                              "  - x^n for exponentiation\n"
                              "  - n√x for n-th square root of x\n"
                              "  - |x| for absolute value\n"
-                             "  - n! for factorial\n\n"
+                             "  - n! for factorial\n"
+                             "  - π for pi.\n"
+                             "  - e for Euler's number.\n\n"
                              "Press 'C' to clear the entry.\n"
                              "Press 'DEL' to delete the last character.\n\n")
 
     help_text.pack(pady=20)
+    help_window.resizable(False, False)
+
+
+def about_popup():
+    about_window = tk.Toplevel(root)
+    about_window.title("About")
+    about_window.geometry("700x400")
+    about_window.configure(bg=color1)
+    about_popup_ok = tk.Button(about_window, text="OK", command=about_window.destroy, background=color3, foreground=color4, font=("Verdana", 12))
+    about_popup_ok.pack(pady=20)
+    about_label = tk.Label(about_window, text="About", font=("Verdana", 20), background=color1, foreground=color4)
+    about_label.pack(pady=20)
+    about_text = tk.Text(about_window, height=45, fg="white", background=color1, width=70, font=("Verdana", 12))
+    about_text.insert(tk.END, "This is a simple calculator application.\n\n"
+                             "It is designed to perform basic arithmetic operations.\n\n"
+                             "Developed by [Alex Gajdoš, Jakub Miženko, Simon Zán, Marc Baffaluy Gesti]\n"
+                             "Version 1.0\n\n"
+                             "Thank you for using this calculator!")
+
+    about_text.pack(pady=20)
+    about_window.resizable(False, False)
 
 
 
@@ -107,33 +127,33 @@ BTN_SQRT = tk.Button(root,
                 font=("Verdana", 15))
 BTN_SQRT.grid(row=2, column=1,  pady=2)
 
-# BTN_BRC_L = tk.Button(root,
-#                 background=color3,
-#                 foreground=color4,
-#                 activebackground=color3,
-#                 activeforeground=color4,
-#                 highlightthickness=2,
-#                 highlightcolor='white',
-#                 text="(", 
-#                 width=7,
-#                 height=2,
-#                 borderwidth=0,
-#                 font=("Verdana", 15))
-# BTN_BRC_L.grid(row=3, column=1, pady=2)
+BTN_PI = tk.Button(root,
+                background=color5,
+                foreground=color4,
+                activebackground=color5,
+                activeforeground=color4,
+                highlightthickness=2,
+                highlightcolor='white',
+                text="π", 
+                width=7,
+                height=2,
+                borderwidth=0,
+                font=("Verdana", 15))
+BTN_PI.grid(row=3, column=1, pady=2)
 
-# BTN_BRC_R = tk.Button(root,
-#                 background=color3,
-#                 foreground=color4,
-#                 activebackground=color3,
-#                 activeforeground=color4,
-#                 highlightthickness=2,
-#                 highlightcolor='white',
-#                 text=")", 
-#                 width=7,
-#                 height=2,
-#                 borderwidth=0,
-#                 font=("Verdana", 15))
-# BTN_BRC_R.grid(row=3, column=2, pady=2)
+BTN_EUL = tk.Button(root,
+                background=color5,
+                foreground=color4,
+                activebackground=color5,
+                activeforeground=color4,
+                highlightthickness=2,
+                highlightcolor='white',
+                text="e", 
+                width=7,
+                height=2,
+                borderwidth=0,
+                font=("Verdana", 15))
+BTN_EUL.grid(row=3, column=2, pady=2)
 
 BTN_ABS = tk.Button(root,
                 background=color5,
@@ -429,6 +449,22 @@ BTN_HELP = tk.Button(root,
 BTN_HELP.grid(row=8, column=4, pady=2)
 
 
+
+BTN_ABOUT = tk.Button(root,
+                background=color3,
+                foreground=color4,
+                activebackground=color3,
+                activeforeground=color4,
+                highlightthickness=2,
+                highlightcolor='white',
+                text="About", 
+                width=6,
+                height=1,
+                font=("Verdana", 15),
+                command=about_popup)
+BTN_ABOUT.grid(row=8, column=1, pady=2)
+
+
 BTN0.bind("<Enter>", on_enter)
 BTN0.bind("<Leave>", on_leave)
 BTN1.bind("<Enter>", on_enter)
@@ -467,10 +503,10 @@ BTN_EXP.bind("<Enter>", on_enter_spec)
 BTN_EXP.bind("<Leave>", on_leave_spec)
 BTN_SQRT.bind("<Enter>", on_enter_spec)
 BTN_SQRT.bind("<Leave>", on_leave_spec)
-# BTN_BRC_L.bind("<Enter>", on_enter_spec)
-# BTN_BRC_L.bind("<Leave>", on_leave_spec)
-# BTN_BRC_R.bind("<Enter>", on_enter_spec)
-# BTN_BRC_R.bind("<Leave>", on_leave_spec)
+BTN_PI.bind("<Enter>", on_enter_spec)
+BTN_PI.bind("<Leave>", on_leave_spec)
+BTN_EUL.bind("<Enter>", on_enter_spec)
+BTN_EUL.bind("<Leave>", on_leave_spec)
 BTN_ABS.bind("<Enter>", on_enter_spec)
 BTN_ABS.bind("<Leave>", on_leave_spec)
 BTN_DEL.bind("<Enter>", on_enter_spec)
