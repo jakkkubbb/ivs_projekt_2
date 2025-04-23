@@ -1,9 +1,9 @@
 """
-@file : test_calc.py
-@brief : This file contains the unit tests for our custom math library
-@author : Simon Zán
-@date : 2025-04-18
-@todo : Maybe add more tests for edge cases
+@file test_calc.py
+@brief This file contains the unit tests for our custom math library
+@author Simon Zán
+@date 2025-04-18
+@todo Maybe add more tests for edge cases
 """
 
 import unittest
@@ -12,7 +12,14 @@ from math_lib import *
 
 
 class TestCalc(unittest.TestCase):
+    """
+    @brief This class contains the unit tests for our custom math library
+    """
+
     def test_sum(self):
+        """
+        @brief This function tests the sum function of our custom math library
+        """
         self.assertEqual(sum(0,0),0)
         self.assertEqual(sum(10,5),15)
         self.assertEqual(sum(-1,2),1)
@@ -26,6 +33,10 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(sum(sum(x,y),z),x+y+z)
      
     def test_sum_float(self):
+        """
+        @brief This function tests the sum function of our custom math library, 
+        but with float numbers
+        """
         self.assertEqual(sum(0.0,0.0),0.0)
         self.assertEqual(sum(10.5,5.5),16.0)
         self.assertEqual(sum(-1.5,2.5),1.0)
@@ -39,6 +50,9 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(sum(sum(x,y),z),x+y+z)
 
     def test_sub(self):
+        """
+        @brief This function tests the subtraction function of our custom math library
+        """
         self.assertEqual(sub(0,0),0)
         self.assertEqual(sub(10,5),5)
         self.assertEqual(sub(-1,2),-3)
@@ -50,7 +64,12 @@ class TestCalc(unittest.TestCase):
         z = -10
         self.assertEqual(sub(x,y),z)
         self.assertEqual(sub(sub(x,y),z),x-y-z)
+
     def test_sub_float(self):
+        """
+        @brief This function tests the subtraction function of our custom math library
+        but with float numbers
+        """
         self.assertEqual(sub(0.0,0.0),0.0)
         self.assertEqual(sub(10.5,5.5),5.0)
         self.assertEqual(sub(-1.5,2.5),-4.0)
@@ -64,6 +83,9 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(sub(sub(x,y),z),x-y-z)
 
     def test_mul(self):
+        """
+        @brief This function tests the multiplication function of our custom math library
+        """
         self.assertEqual(mul(0,0),0)
         self.assertEqual(mul(10,5),50)
         self.assertEqual(mul(-1,2),-2)
@@ -78,6 +100,10 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(mul(mul(x,y),z),x*y*z)
     
     def test_mul_float(self):
+        """
+        @brief This function tests the multiplication function of our custom math library
+        but with float numbers
+        """
         self.assertEqual(mul(0.0,0.0),0.0)
         self.assertEqual(mul(10.5,5.5),57.75)
         self.assertEqual(mul(-1.5,2.5),-3.75)
@@ -92,6 +118,9 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(mul(mul(x,y),z),x*y*z)
 
     def test_div(self):
+        """
+        @brief This function tests the division function of our custom math library
+        """
         self.assertEqual(div(0,1),0)
         self.assertEqual(div(10,5),2)
         self.assertEqual(div(-1,2),-0.5)
@@ -105,6 +134,10 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(div(div(x,y),z),x/y/z)
 
     def test_div_float(self):
+        """
+        @brief This function tests the division function of our custom math library
+        but with float numbers
+        """
         self.assertEqual(div(0.0,1.0),0.0)
         self.assertEqual(div(4.5,2.0),2.25)
         self.assertEqual(div(-1.5,2.5),-0.6)
@@ -118,6 +151,9 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(div(div(x,y),z),x/y/z)
     
     def test_abs_v(self):
+        """
+        @brief This function tests the absolute value function of our custom math library
+        """
         self.assertEqual(abs_v(0),0)
         self.assertEqual(abs_v(10),10)
         self.assertEqual(abs_v(-1),1)
@@ -130,6 +166,10 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(abs_v(x),abs_v(y))
     
     def test_abs_v_float(self):   
+        """
+        @brief This function tests the absolute value function of our custom math library
+        but with float numbers
+        """
         self.assertEqual(abs_v(0.0),0.0)
         self.assertEqual(abs_v(10.5),10.5)
         self.assertEqual(abs_v(-1.5),1.5)
@@ -141,6 +181,9 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(abs_v(x),abs_v(y))
 
     def test_power(self):
+        """
+        @brief This function tests the power function of our custom math library
+        """
         self.assertEqual(power(0,0),1)
         self.assertEqual(power(10,5),100000)
         self.assertEqual(power(-1,2),1)
@@ -154,6 +197,10 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(power(x,y),mul(x,x))
 
     def test_power_float(self):
+        """
+        @brief This function tests the power function of our custom math library
+        but with float numbers
+        """
         self.assertEqual(power(0.0,0.0),1.0)
         self.assertEqual(power(10.5,2.0),110.25)
         self.assertEqual(power(-1.5,2.0),2.25)
@@ -161,6 +208,9 @@ class TestCalc(unittest.TestCase):
     
     
     def test_root(self):
+        """
+        @brief This function tests the root function of our custom math library
+        """
         self.assertEqual(root(1,0),0)
         self.assertEqual(root(2,100),10)
         self.assertEqual(root(3,-1),"ERR")
@@ -175,6 +225,9 @@ class TestCalc(unittest.TestCase):
     
 
     def test_factorial(self):
+        """
+        @brief This function tests the factorial function of our custom math library
+        """
         self.assertEqual(factorial(0),1)
         self.assertEqual(factorial(1),1)
         self.assertEqual(factorial(2),2)

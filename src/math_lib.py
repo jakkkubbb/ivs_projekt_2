@@ -1,47 +1,47 @@
 """
-@file : math_lib.py
-@brief : This file contains our custom math library with basic operations
-@details : The library includes functions for addition, subtraction, multiplication,
+@file math_lib.py
+@brief This file contains our custom math library with basic operations
+@details The library includes functions for addition, subtraction, multiplication,
         division, absolute value, power, root, and factorial.
-@author : Marc Baffaluy Gesti
-@date : PLACEHOLDER
+@author Marc Baffaluy Gesti
+@date PLACEHOLDER
 
 """
 
 
 def sum(a, b):
     """
-    @brief : function to sum two numbers
-    @param a : first number
-    @param b : second number
-    @return : sum of a and b
+    @brief function to sum two numbers
+    @param a first number
+    @param b second number
+    @return sum of a and b
     """
     return a + b
 
 def sub(a, b):
     """
-    @brief : function to substract the second number from the first
-    @param a : first number
-    @param b : second number
-    @return : result of the subtraction of b from a
+    @brief function to substract the second number from the first
+    @param a first number
+    @param b second number
+    @return result of the subtraction of b from a
     """
     return a - b
 
 def mul(a, b):
     """
-    @brief : function to multiply two numbers
-    @param a : first number
-    @param b : second number
-    @return : product of a and b multiplication
+    @brief function to multiply two numbers
+    @param a first number
+    @param b second number
+    @return product of a and b multiplication
     """
     return a * b
 
 def div(a, b):
     """
-    @brief : function to divide the first number by the second
-    @param a : first number
-    @param b : second number
-    @return : result of the division of a by b
+    @brief function to divide the first number by the second
+    @param a first number
+    @param b second number
+    @return result of the division of a by b
     @raise ZeroDivisionError : if b is 0
     """
     if b != 0:
@@ -51,20 +51,20 @@ def div(a, b):
     
 def abs_v(a):
     """
-    @brief : function to return the absolute value of a number
-    @param a : first number
-    @return : returns the absolute value of a
+    @brief function to return the absolute value of a number
+    @param a first number
+    @return returns the absolute value of a
     """
     return abs(a)
 
 def power(base, exponent):
     """
-    @brief : function to calculate the power of a base raised to an exponent
-    @param base : the base number
-    @param exponent : the exponent
-    @return : result of base raised to the power of exponent
-    @raise ValueError : if base is negative and exponent is fractional
-    @raise ZeroDivisionError : if base is 0 and exponent is negative
+    @brief function to calculate the power of a base raised to an exponent
+    @param base the base number
+    @param exponent the exponent
+    @return result of base raised to the power of exponent
+    @raise ValueError if base is negative and exponent is fractional
+    @raise ZeroDivisionError if base is 0 and exponent is negative
     """
     if base == 0 and exponent < 0:
         raise ZeroDivisionError("0 cannot be raised to a negative power.")
@@ -74,10 +74,10 @@ def power(base, exponent):
 
 def root(root_exponent, base):
     """
-    @brief : function to calculate the root of a number
-    @param base : base number
-    @param root_exponent : the root exponent
-    @return : returns the root of base with the given exponent
+    @brief function to calculate the root of a number
+    @param base base number
+    @param root_exponent the root exponent
+    @return returns the root of base with the given exponent
     """
     if base < 0 and root_exponent % 2 == 0:
         raise ValueError("Cannot compute even root of a negative number.")
@@ -86,9 +86,9 @@ def root(root_exponent, base):
 
 def factorial(a):
     """
-    @brief : function to calculate the factorial of a number
-    @param a : the number
-    @return : returns the factorial of a
+    @brief function to calculate the factorial of a number
+    @param a the number
+    @return returns the factorial of a
     @raise ValueError : if n is negative
     @raise TypeError : if n is not an integer
     """

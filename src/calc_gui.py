@@ -1,10 +1,10 @@
 """
-@file : calc_gui.py
-@brief : This file contains the GUI for the calculator
-@details : The GUI is built using tkinter and includes buttons for all the operations
-@author : Jakub Miženko
-@date : PLACEHOLDER
-@todo : Change root symbol so LaTeX can be used
+@file calc_gui.py
+@brief This file contains the GUI for the calculator
+@details The GUI is built using tkinter and includes buttons for all the operations
+@author Jakub Miženko
+@date 2025-04-23
+@todo Change root symbol so LaTeX can be used
 """
 
 import tkinter as tk
@@ -36,30 +36,48 @@ text_entry.grid(columnspan=8)
 
 
 def on_enter(e):
+    """
+    @brief function to change the color of the specific button when mouse enters
+    """
     e.widget['background'] = color5
     
 def on_leave(e):
+    """
+    @brief function to change the color of the specific button when mouse enters
+    """
     e.widget['background'] = color3
 
 def on_enter_spec(e):
+    """
+    @brief function to change the color of the specific button when mouse enters
+    """
     e.widget['background'] = color3
 
 def on_leave_spec(e):
+    """
+    @brief function to change the color of the specific button when mouse enters
+    """
     e.widget['background'] = color5
 
 def on_enter_eq(e):
+    """
+    @brief function to change the color of the specific button when mouse enters
+    """
     e.widget['background'] = color_eq_in
 
 def on_leave_eq(e):
+    """
+    @brief function to change the color of the specific button when mouse enters
+    """
     e.widget['background'] = color_eq
 
 
 def help_popup():
     """
-    @brief : function to create a help popup window
-    @details : The function creates a new window with a help message and an OK button to close the window.
-    @param : None
-    @return : None
+    @brief function to create a help popup window
+    @details The function creates a new window with a help message and an OK button to close the window.
+    @param None
+    @return None
     """
     
     help_window = tk.Toplevel(root)
@@ -93,6 +111,13 @@ def help_popup():
 
 
 def about_popup():
+    """
+    @brief function to create an about popup window
+    @details The function creates a new window with an about message and an OK button to close the window.
+    @param None
+    @return None
+    """
+
     about_window = tk.Toplevel(root)
     about_window.title("About")
     about_window.geometry("700x400")
@@ -114,6 +139,12 @@ def about_popup():
 
 
 def handle_keypress(event):
+    """
+    @brief function to handle keyboard input
+    @details The function handles keyboard input and inserts the corresponding value into the text entry.
+    @param event : the event object containing the key pressed
+    @return None
+    """
     
     key = event.char
     if key in "0123456789+-*/().,":
