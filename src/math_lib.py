@@ -72,7 +72,7 @@ def power(base, exponent):
         raise ValueError("Negative base cannot be raised to a fractional power.")
     return base ** exponent
 
-def root(base, root_exponent):
+def root(root_exponent, base):
     """
     @brief : function to calculate the root of a number
     @param base : base number
