@@ -11,9 +11,10 @@ def insert_value(entry_widget, value):
     entry_widget.config(state="normal")
     current = entry_widget.get("1.0", "end").strip()
     
+    
+
     if calculated:
-        print(value)
-        if str(value).isdigit():
+        if str(value).isdigit() or str(value)=="ans":
             current=""
         calculated = False
 
@@ -22,8 +23,6 @@ def insert_value(entry_widget, value):
         current = ""
     
 
-
-    
 
     entry_widget.delete("1.0", "end")
     entry_widget.insert("1.0", current + str(value))
@@ -36,14 +35,35 @@ def clear_entry(entry_widget):
 
 
 def delete_last(entry_widget):
+    global ans,calculated
+    calculated = False
     entry_widget.config(state="normal")
+    
     current = entry_widget.get("1.0", "end").strip()
+
+    
+    if len(current) >= 3:
+        if current[-3:] == "ans":
+            current = current[:-2]
+        elif current[-4:] == "abs(":
+            current = current[:-3]
+        elif current[-6:] == "power(":
+            current = current[:-5]
+        elif current[-5:] == "sqrt(":
+            current = current[:-4]
+        elif current[-4:] == "fac(":
+            current = current[:-3]
+        
+
     entry_widget.delete("1.0", "end")
     entry_widget.insert("1.0", current[:-1])
     entry_widget.config(state="disabled")
 
+
 def get_ans(entry_widget):
     global ans
+    if ans is None:
+        return "0"
     return ans
     
 
@@ -58,6 +78,7 @@ def calculate(entry_widget):
         expression = expression.replace("sqrt", "root")  
         expression = expression.replace("abs", "abs_v")  
         expression = expression.replace("fac", "factorial")
+        expression = expression.replace("ans", str(get_ans(entry_widget)))
         
         result = eval(expression, {"__builtins__": None}, {
             "sum": sum,
@@ -68,6 +89,7 @@ def calculate(entry_widget):
             "abs_v": abs_v,
             "root": root,
             "factorial": factorial
+            
         })
         
         ans = result
