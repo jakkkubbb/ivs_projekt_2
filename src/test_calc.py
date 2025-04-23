@@ -153,17 +153,17 @@ class TestCalc(unittest.TestCase):
     
     
     def test_root(self):
-        self.assertEqual(root(0,1),0)
-        self.assertEqual(root(100,2),10)
-        self.assertEqual(root(-1,3),"ERR")
-        self.assertEqual(root(2,4),2)
-        self.assertEqual(root(-1,2),"ERR")
-        self.assertEqual(root(100000,0),"ERR")
+        self.assertEqual(root(1,0),0)
+        self.assertEqual(root(2,100),10)
+        self.assertEqual(root(3,-1),"ERR")
+        self.assertEqual(root(4,2),2)
+        self.assertEqual(root(2,-1),"ERR")
+        self.assertEqual(root(0,100000),"ERR")
         x = 400
         y = 2
         z = 20
-        self.assertEqual(root(x,y),z)
-        self.assertEqual(root(x,y),power(z,y))
+        self.assertEqual(root(y,x),z)
+        self.assertEqual(root(y,x),power(z,y))
     
 
     def test_factorial(self):
