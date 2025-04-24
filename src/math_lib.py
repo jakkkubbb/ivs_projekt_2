@@ -79,10 +79,15 @@ def root(root_exponent, base):
     @param root_exponent the root exponent
     @return returns the root of base with the given exponent
     """
+    if root_exponent == 0:
+        return "ERR"  
     if base < 0 and root_exponent % 2 == 0:
-        raise ValueError("Cannot compute even root of a negative number.")
-    else:
-        return base ** (1 / root_exponent)
+        return "ERR"  
+    if base == 0 and root_exponent < 0:
+        return "ERR"  
+    if base < 0 and root_exponent % 2 != 0:
+        return -((-base) ** (1 / root_exponent))  
+    return base ** (1 / root_exponent)
 
 def factorial(a):
     """
