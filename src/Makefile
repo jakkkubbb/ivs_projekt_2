@@ -1,5 +1,5 @@
 PYTHON   := python3
-ZIP_NAME := ivs_project.zip
+ZIP_NAME := xzansim00_xgajdoa00_xmizenj00_xbafalm00.zip
 
 SRCS     := $(wildcard *.py)
 
@@ -16,20 +16,25 @@ run:
 test:
 	$(PYTHON) -m pytest -v test_calc.py
 
-# Clean build artifacts
-clean:
-	rm -rf __pycache__
-	find . -name "*.pyc" -delete || true
-
 
 # Pack the project for submission
 pack: clean doc
-	zip -r $(ZIP_NAME) ./*
-    @echo "Project packed into $(ZIP_NAME)"
+	mkdir ../xzansim00_xgajdoa00_xmizenj00_xbafalm00
+	cp -r ../.git ../plan ../src ../.editorconfig ../.gitignore ../LICENSE ../README.md ../xzansim00_xgajdoa00_xmizenj00_xbafalm00
+	zip -r $(ZIP_NAME) ../xzansim00_xgajdoa00_xmizenj00_xbafalm00
+	rm -rf ../xzansim00_xgajdoa00_xmizenj00_xbafalm00
+	@echo "Project packed into $(ZIP_NAME)"
+
+# Clean build artifacts
+clean:
+	rm -rf __pycache__
+	rm -rf .pytest_cache
+	find . -name "*.pyc" -delete || true
+
 
 # Generate documentation using Doxygen
 doc:
-    doxygen Doxyfile
+	doxygen Doxyfile
 
 # Calculate standard deviation from data
 stddev:
