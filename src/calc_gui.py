@@ -192,6 +192,8 @@ def handle_keypress(event):
 root.bind("<Key>", handle_keypress)
 
 # @cond DOXYGEN_IGNORE
+
+# Buttons
 BTN_EXP = tk.Button(root,
                 background=color5,
                 foreground=color4,
@@ -600,6 +602,8 @@ BTN_ABOUT = tk.Button(root,
 BTN_ABOUT.grid(row=8, column=1, pady=2)
 
 
+
+# Hover effect for buttons
 BTN0.bind("<Enter>", on_enter)
 BTN0.bind("<Leave>", on_leave)
 BTN1.bind("<Enter>", on_enter)
