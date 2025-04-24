@@ -38,7 +38,10 @@ stddev:
 # Display help
 help:
 	@echo "Available targets:"
-	@echo "  test   - Run tests using pytest"
-	@echo "  clean  - Clean build artifacts"
-	@echo "  zip    - Create a zip archive of the project"
-	@echo "  help   - Display this help message"
+	@echo "  run     - Run the GUI application"
+	@echo "  test    - Run tests using pytest"
+	@echo "  clean   - Clean build artifacts"
+	@echo "  pack    - Create a zip archive of the project"
+	@echo "  doc     - Generate documentation using Doxygen"
+	@echo "  stddev  - Calculate standard deviation from data"
+	@echo "  help    - Display this help message"
