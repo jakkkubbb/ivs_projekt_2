@@ -23,7 +23,7 @@ def sub(a, b):
     @brief function to substract the second number from the first
     @param a first number
     @param b second number
-    @return result of the subtraction of b from a
+    @return subtraction of b from a
     """
     return a - b
 
@@ -42,7 +42,7 @@ def div(a, b):
     @param a first number
     @param b second number
     @return result of the division of a by b
-    @raise ZeroDivisionError : if b is 0
+    @exception ZeroDivisionError : if b is 0
     """
     if b != 0:
         return a / b
@@ -53,7 +53,7 @@ def abs_v(a):
     """
     @brief function to return the absolute value of a number
     @param a first number
-    @return returns the absolute value of a
+    @return absolute value of a
     """
     return abs(a)
 
@@ -63,8 +63,8 @@ def power(base, exponent):
     @param base the base number
     @param exponent the exponent
     @return result of base raised to the power of exponent
-    @raise ValueError if base is negative and exponent is fractional
-    @raise ZeroDivisionError if base is 0 and exponent is negative
+    @exception ValueError if base is negative and exponent is fractional
+    @exception ZeroDivisionError if base is 0 and exponent is negative
     """
     if base == 0 and exponent < 0:
         raise ZeroDivisionError("0 cannot be raised to a negative power.")
@@ -77,7 +77,7 @@ def root(root_exponent, base):
     @brief function to calculate the root of a number
     @param base base number
     @param root_exponent the root exponent
-    @return returns the root of base with the given exponent
+    @return the root of base with the given exponent
     """
     if root_exponent == 0:
         return "ERR"  
@@ -92,10 +92,10 @@ def root(root_exponent, base):
 def factorial(a):
     """
     @brief function to calculate the factorial of a number
-    @param a the number
-    @return returns the factorial of a
-    @raise ValueError : if n is negative
-    @raise TypeError : if n is not an integer
+    @param a the number to be factorialized
+    @return the factorial of a
+    @exception ValueError : if n is negative
+    @exception TypeError : if n is not an integer
     """
     if a < 0:
         raise ValueError("Factorial is not defined for negative numbers.")

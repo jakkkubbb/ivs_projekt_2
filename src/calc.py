@@ -30,7 +30,7 @@ def insert_value(entry_widget, value):
     then it is set to disabled again
     @param entry_widget the entry widget to insert the value into
     @param value the value to insert
-    @return None
+    @return the function does not return anything, it only modifies the entry widget
     """
     global ans,calculated
 
@@ -60,7 +60,7 @@ def clear_entry(entry_widget):
     @details the state of the entry widget is set to normal before inserting the value
     then it is set to disabled again
     @param entry_widget the widget to clear
-    @return None
+    @return the function does not return anything, it only modifies the entry widget
     """
     entry_widget.config(state="normal")
     entry_widget.delete("1.0", "end")
@@ -73,7 +73,7 @@ def delete_last(entry_widget):
     @details the state of the entry widget is set to normal before inserting the value
     then it is set to disabled again
     @param entry_widget the widget to delete the last character from
-    @return None
+    @return the function does not return anything, it only modifies the entry widget
     """
     global ans,calculated
     calculated = False
@@ -103,6 +103,9 @@ def delete_last(entry_widget):
 def get_ans(entry_widget):
     """
     @brief returns the last calculated value
+    @details if there was not a calculation yet, it returns 0
+    @param entry_widget the widget to get the last calculated value from
+    @return the last calculated value
     """
     global ans
     if ans is None:
@@ -116,7 +119,7 @@ def calculate(entry_widget):
     @details the state of the entry widget is set to normal before inserting the value
     then it is set to disabled again
     @param entry_widget the widget to calculate the result from
-    @return None
+    @return the function does not return anything, only inserts the result into the entry widget
     """
     global ans,calculated
     entry_widget.config(state="normal")
