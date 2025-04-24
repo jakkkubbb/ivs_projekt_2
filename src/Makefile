@@ -25,11 +25,11 @@ clean:
 # Pack the project for submission
 pack: clean doc
 	zip -r $(ZIP_NAME) ./*
-    @echo "Project packed into $(ZIP_NAME)"
+	@echo "Project packed into $(ZIP_NAME)"
 
 # Generate documentation using Doxygen
 doc:
-    doxygen Doxyfile
+	doxygen Doxyfile
 
 # Calculate standard deviation from data
 stddev:
