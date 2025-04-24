@@ -3,7 +3,7 @@ ZIP_NAME := ivs_project.zip
 
 SRCS     := $(wildcard *.py)
 
-.PHONY: all run test clean zip help
+.PHONY: all run test clean pack doc stddev help
 
 # Default target: Run the application
 all: run
@@ -31,7 +31,7 @@ pack: clean doc
 doc:
     doxygen Doxyfile
 
-
+# Calculate standard deviation from data
 stddev:
 	$(PYTHON) stddev.py < ./standard_deviation_data/data.txt
 
