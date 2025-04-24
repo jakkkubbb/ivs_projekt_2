@@ -21,9 +21,9 @@ test:
 pack: clean doc
 	mkdir ../xzansim00_xgajdoa00_xmizenj00_xbafalm00
 	cp -r ../.git ../plan ../src ../.editorconfig ../.gitignore ../LICENSE ../README.md ../xzansim00_xgajdoa00_xmizenj00_xbafalm00
-	zip -r $(ZIP_NAME) ../xzansim00_xgajdoa00_xmizenj00_xbafalm00
+	zip -r ../$(ZIP_NAME) ../xzansim00_xgajdoa00_xmizenj00_xbafalm00
 	rm -rf ../xzansim00_xgajdoa00_xmizenj00_xbafalm00
-	@echo "Project packed into $(ZIP_NAME)"
+	@echo "Project packed into ../$(ZIP_NAME)"
 
 # Clean build artifacts
 clean:
