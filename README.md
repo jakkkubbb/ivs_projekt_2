@@ -1,7 +1,7 @@
 # IVS_PROJECT_2 - CALCULATOR
 Brno University of Technology, Faculty of Information Technology second project for subject Practical Aspects of Software Design(IVS)
 ## Authors
-* Jakub Miženko *este jakubov xlogin*
+* Jakub Miženko xmizenj00
 * Simon Zán xzansim00
 * Alex Gajdoš xgajdoa00
 * Marc Bafalluy Gesti xbafalm00
