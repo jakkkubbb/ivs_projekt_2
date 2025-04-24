@@ -11,7 +11,6 @@ that those are hidden to the documentation
 
 import tkinter as tk
 from calc import insert_value, clear_entry, delete_last, calculate,get_ans
-import sys
 
 # @cond DOXYGEN_IGNORE
 root = tk.Tk()
