@@ -31,6 +31,10 @@ pack: clean doc
 doc:
     doxygen Doxyfile
 
+
+stddev:
+	$(PYTHON) stddev.py < ./standard_deviation_data/data.txt
+
 # Display help
 help:
 	@echo "Available targets:"
