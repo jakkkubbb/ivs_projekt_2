@@ -1,6 +1,17 @@
+# Python cache files
 __pycache__/
 *.pyc
-*.pyo
+
+# pytest cache
+.pytest_cache/
+
+# PyInstaller build files
+build/
+dist/
+*.spec
+*.iss
+
+# Doxygen output
+docs/
 html/
 latex/
-.pytest_cache/
