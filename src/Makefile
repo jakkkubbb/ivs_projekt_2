@@ -21,9 +21,15 @@ clean:
 	rm -rf __pycache__
 	find . -name "*.pyc" -delete || true
 
-# Create a zip archive of the project
-zip:
+
+# Pack the project for submission
+pack: clean doc
 	zip -r $(ZIP_NAME) ./*
+    @echo "Project packed into $(ZIP_NAME)"
+
+# Generate documentation using Doxygen
+doc:
+    doxygen Doxyfile
 
 # Display help
 help:
