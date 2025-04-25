@@ -11,6 +11,8 @@ that those are hidden to the documentation
 
 import tkinter as tk
 from calc import insert_value, clear_entry, delete_last, calculate,get_ans
+import os
+
 
 # @cond DOXYGEN_IGNORE
 root = tk.Tk()
@@ -27,8 +29,9 @@ color_eq_cl='#0a8aab'
 root.configure(bg=color1)
 root.resizable(False, False)
 root.tk.call('tk', 'scaling', 1.5)
-root.iconbitmap("./src/icon/calculator_icon.ico")
 
+icon_path = os.path.join(os.path.dirname(__file__), "icon", "calculator_icon.ico")
+root.iconbitmap(icon_path)
 
 text_entry = tk.Text(root, height=3, fg="white",background=color1, width=20,font=("TkDefaultFont", 24))
 text_entry.grid(columnspan=8)
