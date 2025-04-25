@@ -26,9 +26,8 @@ color_eq_cl='#0a8aab'
 
 root.configure(bg=color1)
 root.resizable(False, False)
-
 root.tk.call('tk', 'scaling', 1.5)
-
+root.iconbitmap("./src/icon/calculator_icon.ico")
 
 
 text_entry = tk.Text(root, height=3, fg="white",background=color1, width=20,font=("TkDefaultFont", 24))
@@ -658,10 +657,3 @@ BTN_CLR.bind("<Leave>", on_leave_spec)
 
 
 root.mainloop()
-
-
-
-
-
-
-
