@@ -1,9 +1,20 @@
+"""
+@file stddev.py
+@brief this file calculates the standard deviation of a list of numbers
+@author Simon Zán
+@date 2025-04-24
+"""
+
 import sys
 import math_lib as ml
 import random
 
 def main():
-    
+    """
+    @brief main function to calculate the standard deviation of a list of numbers
+    @details the function reads a list of numbers from the standard input
+    @return the standard deviation of the list of numbers
+    """
     
     data = []
 
@@ -49,7 +60,12 @@ def main():
 
 
 def generate_test_data(number):
-    
+    """
+    @brief function to generate test data
+    @param number the number of random numbers to generate
+    @return the function does not return anything, only generates random numbers
+    """
+
     with open("./standard_deviation_data/data.txt", "w") as file:
         for _ in range(number):
             value = random.uniform(-1000, 1000)  # Generate random float between -1000 and 1000

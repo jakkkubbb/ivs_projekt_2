@@ -4,7 +4,6 @@
 @details The GUI is built using tkinter and includes buttons for all the operations
 @author Jakub Miženko
 @date 2025-04-23
-@todo Change root symbol so LaTeX can be used
 @details The file also contains "variables" for each button, but we decided
 that those are hidden to the documentation
 """
@@ -27,7 +26,12 @@ color_eq_cl='#0a8aab'
 root.configure(bg=color1)
 root.resizable(False, False)
 root.tk.call('tk', 'scaling', 1.5)
-root.iconbitmap("./src/icon/calculator_icon.ico")
+icon_path = "./icon/calculator_icon.png"
+try:
+    icon = tk.PhotoImage(file=icon_path)
+    root.iconphoto(True, icon)
+except tk.TclError:
+    print(f"Icon file not found: {icon_path}")
 
 
 text_entry = tk.Text(root, height=3, fg="white",background=color1, width=20,font=("TkDefaultFont", 24))
