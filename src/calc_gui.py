@@ -10,6 +10,8 @@ that those are hidden to the documentation
 
 import tkinter as tk
 from calc import insert_value, clear_entry, delete_last, calculate,get_ans
+import os
+
 
 # @cond DOXYGEN_IGNORE
 root = tk.Tk()
@@ -33,6 +35,8 @@ try:
 except tk.TclError:
     print(f"Icon file not found: {icon_path}")
 
+icon_path = os.path.join(os.path.dirname(__file__), "icon", "calculator_icon.ico")
+root.iconbitmap(icon_path)
 
 text_entry = tk.Text(root, height=3, fg="white",background=color1, width=20,font=("TkDefaultFont", 24))
 text_entry.grid(columnspan=8)
