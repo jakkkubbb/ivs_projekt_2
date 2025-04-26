@@ -123,7 +123,7 @@ def help_popup():
                              "You can also use:\n"
                              "  • x^n for exponentiation\n"
                                 "      - power(base,exponent)\n"
-                                "      - Use '^' on your keyboard or press the button\n"
+                                "      - Use 'p' on your keyboard or press the button\n"
                                 "        for exponentation\n\n"
                              "  • n√x for n-th square root of x\n"
                                 "      - sqrt(base,root_exponent)\n"
@@ -191,7 +191,7 @@ def handle_keypress(event):
     key = event.char
     if key in "0123456789+-*/().,":
         insert_value(text_entry, key)
-    elif key == "^":  
+    elif key == "p":  
         insert_value(text_entry, "power(")
     elif key == "r":  
         insert_value(text_entry, "sqrt(")
