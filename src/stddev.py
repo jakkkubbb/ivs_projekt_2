@@ -7,10 +7,39 @@
 @author Simon Zán
 @date 2025-04-24
 """
-
+import cProfile
 import sys
 import math_lib as ml
 import random
+
+
+def add(data):
+    total = 0.0
+    for x in data:
+        total = ml.sum(total, x)
+    return total
+
+def avg(total, n):
+    return ml.div(total, n)
+
+
+def sum_sq_diff(data, avg):
+    sum_sq_diff = 0.0
+    for x in data:
+        diff = ml.sub(x, avg)
+        sq = ml.power(diff, 2)
+        sum_sq_diff = ml.sum(sum_sq_diff, sq)
+    return sum_sq_diff
+
+def stddev(data, n):
+    org_sum = add(data)
+    calc_mean = avg(org_sum, n)
+    up_sum = 0
+    up_sum = sum_sq_diff(data, calc_mean)
+    stddev = ml.root(2, ml.div(up_sum, ml.sub(n, 1)))
+    return f"{stddev:.6f}"
+
+
 
 def main():
     """
@@ -20,9 +49,6 @@ def main():
     """
     
     data = []
-
-    #generate_test_data(1000)  # Generate 1000 random numbers for testing
-    
     
     for line in sys.stdin:
         for item in line.strip().split():
@@ -31,38 +57,15 @@ def main():
                 data.append(number)
             except ValueError:
                 continue
-
-    
-
-    
     n = len(data)
     if n < 2:
         print("Atleast 2 numbers are required to calculate the standard deviation.")
         return
 
-    
+    print(stddev(data, n))
 
 
-    total = 0.0
-    for x in data:
-        total = ml.sum(total, x)
-    avg = ml.div(total, n)
-
-    
-    sum_sq_diff = 0.0
-    for x in data:
-        diff = ml.sub(x, avg)
-        sq = ml.power(diff, 2)
-        sum_sq_diff = ml.sum(sum_sq_diff, sq)
-
-    
-    stddev = ml.root(2, ml.div(sum_sq_diff, ml.sub(n, 1)))
-    print(f"Standard deviation is: {stddev:.6f}")
-
-
-
-
-def generate_test_data(number):
+def generate_test_data():
     """
     @brief function to generate test data
     @param number the number of random numbers to generate
@@ -70,9 +73,24 @@ def generate_test_data(number):
     """
 
     with open("./standard_deviation_data/data.txt", "w") as file:
-        for _ in range(number):
-            value = random.uniform(-1000, 1000)  # Generate random float between -1000 and 1000
+        for _ in range(1000):
+            value = random.uniform(-1000, 1000)  
             file.write(f"{value}\n")
+
+
+    with open("./standard_deviation_data/data1.txt", "w") as file1:
+        for _ in range(10):
+            value = random.uniform(-1000, 1000)  
+            file1.write(f"{value}\n")
+
+    with open("./standard_deviation_data/data2.txt", "w") as file2:
+        for _ in range(1000000):
+            value = random.uniform(-1000, 1000)  
+            file2.write(f"{value}\n")
+
+
+cProfile.run('main()')
+#generate_test_data()
 
 
 
