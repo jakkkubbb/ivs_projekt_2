@@ -1,0 +1,93 @@
+Output from file with 10 random numbers
+
+94 function calls in 0.001 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.001    0.001 <string>:1(<module>)
+        2    0.000    0.000    0.000    0.000 codecs.py:319(decode)
+       20    0.000    0.000    0.000    0.000 math_lib.py:15(sum)
+       11    0.000    0.000    0.000    0.000 math_lib.py:24(sub)
+        2    0.000    0.000    0.000    0.000 math_lib.py:42(div)
+       10    0.000    0.000    0.000    0.000 math_lib.py:63(power)
+        1    0.000    0.000    0.000    0.000 math_lib.py:78(root)
+        1    0.000    0.000    0.000    0.000 stddev.py:16(add)
+        1    0.000    0.000    0.000    0.000 stddev.py:22(avg)
+        1    0.000    0.000    0.000    0.000 stddev.py:26(sum_sq_diff)
+        1    0.000    0.000    0.000    0.000 stddev.py:34(stddev)
+        1    0.001    0.001    0.001    0.001 stddev.py:44(main)
+        2    0.000    0.000    0.000    0.000 {built-in method _codecs.utf_8_decode}
+        1    0.000    0.000    0.001    0.001 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+       10    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        6    0.000    0.000    0.000    0.000 {method 'is_integer' of 'float' objects}
+       10    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+       10    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+
+
+
+
+Output from file with 1000 random numbers
+
+7532 function calls in 0.006 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.006    0.006 <string>:1(<module>)
+        4    0.000    0.000    0.000    0.000 codecs.py:319(decode)
+     2000    0.000    0.000    0.000    0.000 math_lib.py:15(sum)
+     1001    0.000    0.000    0.000    0.000 math_lib.py:24(sub)
+        2    0.000    0.000    0.000    0.000 math_lib.py:42(div)
+     1000    0.001    0.000    0.001    0.000 math_lib.py:63(power)
+        1    0.000    0.000    0.000    0.000 math_lib.py:78(root)
+        1    0.000    0.000    0.000    0.000 stddev.py:16(add)
+        1    0.000    0.000    0.000    0.000 stddev.py:22(avg)
+        1    0.001    0.001    0.002    0.002 stddev.py:26(sum_sq_diff)
+        1    0.000    0.000    0.002    0.002 stddev.py:34(stddev)
+        1    0.003    0.003    0.006    0.006 stddev.py:44(main)
+        4    0.000    0.000    0.000    0.000 {built-in method _codecs.utf_8_decode}
+        1    0.000    0.000    0.006    0.006 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+     1000    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+      510    0.000    0.000    0.000    0.000 {method 'is_integer' of 'float' objects}
+     1000    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+     1000    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+
+
+
+
+
+Output from file with 1000000 random numbers
+
+      7505028 function calls in 4.291 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.015    0.015    4.291    4.291 <string>:1(<module>)
+     2280    0.009    0.000    0.017    0.000 codecs.py:319(decode)
+  2000000    0.213    0.000    0.213    0.000 math_lib.py:15(sum)
+  1000001    0.119    0.000    0.119    0.000 math_lib.py:24(sub)
+        2    0.000    0.000    0.000    0.000 math_lib.py:42(div)
+  1000000    0.399    0.000    0.445    0.000 math_lib.py:63(power)
+        1    0.000    0.000    0.000    0.000 math_lib.py:78(root)
+        1    0.212    0.212    0.312    0.312 stddev.py:16(add)
+        1    0.000    0.000    0.000    0.000 stddev.py:22(avg)
+        1    0.743    0.743    1.420    1.420 stddev.py:26(sum_sq_diff)
+        1    0.000    0.000    1.732    1.732 stddev.py:34(stddev)
+        1    2.127    2.127    4.275    4.275 stddev.py:44(main)
+     2280    0.008    0.000    0.008    0.000 {built-in method _codecs.utf_8_decode}
+        1    0.000    0.000    4.291    4.291 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+  1000000    0.125    0.000    0.125    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+   500454    0.045    0.000    0.045    0.000 {method 'is_integer' of 'float' objects}
+  1000000    0.159    0.000    0.159    0.000 {method 'split' of 'str' objects}
+  1000000    0.115    0.000    0.115    0.000 {method 'strip' of 'str' objects}
