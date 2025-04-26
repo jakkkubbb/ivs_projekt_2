@@ -15,3 +15,8 @@ dist/
 docs/
 html/
 latex/
+
+#virtual env for binary files
+venv/
+src/exec.sh
+requirements.txt
