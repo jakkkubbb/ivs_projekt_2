@@ -12,6 +12,9 @@ dist/
 *.iss
 
 # Doxygen output
-docs/
+doc/
 html/
 latex/
+
+# Files not to be included in the repository
+odevzdani.txt
