@@ -3,7 +3,10 @@
 @brief This file contains our custom math library with basic operations
 @details The library includes functions for addition, subtraction, multiplication,
         division, absolute value, power, root, and factorial.
-@author Marc Baffaluy Gesti
+@author Marc Baffaluy Gesti 
+@author Alex Gajdoš
+@author Jakub Miženko
+@author Simon Zán
 @date PLACEHOLDER
 
 """

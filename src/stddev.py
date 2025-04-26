@@ -1,6 +1,9 @@
 """
 @file stddev.py
 @brief this file calculates the standard deviation of a list of numbers
+@author Marc Baffaluy Gesti 
+@author Alex Gajdoš
+@author Jakub Miženko
 @author Simon Zán
 @date 2025-04-24
 """
