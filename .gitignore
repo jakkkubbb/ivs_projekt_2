@@ -18,3 +18,7 @@ latex/
 
 # Files not to be included in the repository
 odevzdani.txt
+#virtual env for binary files
+venv/
+src/exec.sh
+requirements.txt
