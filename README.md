@@ -11,7 +11,7 @@ Team: presou
 * Alex Gajdoš xgajdoa00
 * Jakub Miženko xmizenj00
 * Marc Bafalluy Gesti xbafalm00
-* 
+  
 ## Function description
 ------------------------------
 
