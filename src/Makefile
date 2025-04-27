@@ -72,6 +72,8 @@ help:
 	@echo "  test    - Run tests using pytest"
 	@echo "  clean   - Clean build artifacts"
 	@echo "  pack    - Create a zip archive of the project"
+	@echo "  ispack  - Create a zip archive of the project for submission"
+	@echo "  install - Install dependencies"
 	@echo "  doc     - Generate documentation using Doxygen"
 	@echo "  stddev  - Calculate standard deviation from data"
 	@echo "  help    - Display this help message"
