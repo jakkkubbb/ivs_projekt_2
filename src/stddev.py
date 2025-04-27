@@ -60,6 +60,9 @@ def main():
 
     print(stddev(data, n))
 
+    input("Press Enter to exit...")
+
+
 
 def generate_test_data():
     """
@@ -87,7 +90,6 @@ def generate_test_data():
 
 #cProfile.run('main()')
 #generate_test_data()
-
 
 
 if __name__ == "__main__":
