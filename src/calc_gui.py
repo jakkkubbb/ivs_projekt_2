@@ -2,7 +2,7 @@
 @file calc_gui.py
 @brief This file contains the GUI for the calculator
 @details The GUI is built using tkinter and includes buttons for all the operations
-@author Marc Baffaluy Gesti 
+@author Marc Bafalluy Gesti 
 @author Alex Gajdoš
 @author Jakub Miženko
 @author Simon Zán
@@ -170,7 +170,7 @@ def about_popup():
     about_text = tk.Text(about_window, height=45, fg="white", background=color1, width=70, font=("TkDefaultFont", 12))
     about_text.insert(tk.END, "This is a simple calculator application.\n\n"
                              "It is designed to perform basic arithmetic operations.\n\n"
-                             "Developed by [Alex Gajdoš, Jakub Miženko, Simon Zán, Marc Baffaluy Gesti]\n"
+                             "Developed by [Alex Gajdoš, Jakub Miženko, Simon Zán, Marc Bafalluy Gesti]\n"
                              "Version 1.0\n\n"
                              "Thank you for using this calculator!")
 

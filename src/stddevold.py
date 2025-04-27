@@ -50,10 +50,14 @@ def main():
     
     data = []
     
-    
-    data = [float(item) for item in input().strip().split() if item]
+    for line in sys.stdin:
+        for item in line.strip().split():
+            try:
+                number = float(item)
+                data.append(number)
+            except ValueError:
+                continue
     n = len(data)
-
     if n < 2:
         print("Atleast 2 numbers are required to calculate the standard deviation.")
         return

@@ -3,7 +3,7 @@
 @brief This file contains the main logic for the calculator GUI
 @details The calculator supports basic operations, has a "help" button
 with a pop-up window, and input can be given with buttons or keyboard.
-@author Marc Baffaluy Gesti 
+@author Marc Bafalluy Gesti 
 @author Alex Gajdoš
 @author Jakub Miženko
 @author Simon Zán

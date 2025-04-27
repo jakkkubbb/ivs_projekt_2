@@ -1,7 +1,7 @@
 """
 @file test_calc.py
 @brief This file contains the unit tests for our custom math library
-@author Marc Baffaluy Gesti 
+@author Marc Bafalluy Gesti 
 @author Alex Gajdoš
 @author Jakub Miženko
 @author Simon Zán
