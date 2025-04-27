@@ -14,16 +14,34 @@ import random
 
 
 def add(data):
+    """
+    @brief function to add a list of numbers
+    @param data the list of numbers to add
+    @return the sum of the numbers in the list
+    """
+
     total = 0.0
     for x in data:
         total = ml.sum(total, x)
     return total
 
 def avg(total, n):
+    """
+    @brief function to calculate the average of a list of numbers
+    @param total the sum of the numbers in the list
+    @param n the number of numbers in the list
+    @return the average of the numbers in the list
+    """
     return ml.div(total, n)
 
 
 def sum_sq_diff(data, avg):
+    """
+    @brief function to calculate the sum of the squared differences
+    @param data the list of numbers
+    @param avg the average of the numbers in the list
+    @return the sum of the squared differences
+    """
     sum_sq_diff = 0.0
     for x in data:
         diff = ml.sub(x, avg)
@@ -32,6 +50,13 @@ def sum_sq_diff(data, avg):
     return sum_sq_diff
 
 def stddev(data, n):
+    """
+    @brief function to calculate the standard deviation of a list of numbers
+    using the functions defined above
+    @param data the list of numbers
+    @param n the number of numbers in the list
+    @return the standard deviation of the numbers in the list
+    """
     org_sum = add(data)
     calc_mean = avg(org_sum, n)
     up_sum = 0
@@ -47,6 +72,7 @@ def main():
     @details the function reads a list of numbers from the standard input
     @return the standard deviation of the list of numbers
     """
+
     while True:
         data = []
         
@@ -95,7 +121,7 @@ def generate_test_data():
             file2.write(f"{value}\n")
 
 
-#cProfile.run('main()')
+cProfile.run('main()')
 #generate_test_data()
 
 
