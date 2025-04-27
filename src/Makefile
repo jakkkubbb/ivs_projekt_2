@@ -31,7 +31,7 @@ test:
 # Pack the project
 pack: clean doc
 	mkdir -p ../../$(TEAM_PACK_NAME)/doc && cp -a ./doc/. ../../$(TEAM_PACK_NAME)/doc
-	mkdir -p ../../$(TEAM_PACK_NAME)/install && cp -r ./setup/install/. ../../$(TEAM_PACK_NAME)/install
+	mkdir -p ../../$(TEAM_PACK_NAME)/install && cp -r ./setup/. ../../$(TEAM_PACK_NAME)/install
 	mkdir -p ../../$(TEAM_PACK_NAME)/repo && cp -a ../. ../../$(TEAM_PACK_NAME)/repo
 	cd ../.. && zip -qr $(TEAM_PACK_NAME)_wis.zip $(TEAM_PACK_NAME)
 	rm -rf ../../$(TEAM_PACK_NAME)
