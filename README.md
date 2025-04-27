@@ -32,10 +32,8 @@ GNU GPL v3
 
 At this time, the calculator is only supported on the Windows operating system.
 These are the steps to install calculator/stddev application:
-<ol>
-  <li>Make sure, that you have atleast 45mb of space on your drive, internet connection and administrator rights.</li>
-  <li>Download this repository.</li>
-  <li>Start the installer file [calculator_setup.exe](https://github.com/jakkkubbb/ivs_projekt_2/blob/main/src/setup/calculator_setup.exe) or [calculator_setup.exe](https://github.com/jakkkubbb/ivs_projekt_2/blob/main/src/setup/stddev_setup.exe)</li>
-  <li>Start the installed app on your computer</li>
-</ol>
+1. Make sure that you have at least 45 MB of space on your drive, internet connection, and administrator rights.
+2. Download this repository.
+3. Start the installer file [calculator_setup.exe](https://github.com/jakkkubbb/ivs_projekt_2/blob/main/src/setup/calculator_setup.exe) or [stddev_setup.exe](https://github.com/jakkkubbb/ivs_projekt_2/blob/main/src/setup/stddev_setup.exe).
+4. Start the installed app on your computer.
 
