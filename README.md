@@ -3,7 +3,7 @@
 
 Brno University of Technology, Faculty of Information Technology second project for subject Practical Aspects of Software Design(IVS)
 
-## Authors / Autori
+## Authors
 ---------
 
 Team: presou
@@ -15,7 +15,7 @@ Team: presou
 ## Function description
 ---------
 
-A simple calculator created as part of a team project.
+A simple calculator and stddev apps created as part of a team project.
 
 ## Platforms
 ---------
