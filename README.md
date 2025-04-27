@@ -31,6 +31,7 @@ GNU GPL v3
 ---------
 
 At this time, the calculator is only supported on the Windows operating system.
+
 These are the steps to install calculator/stddev application:
 1. Make sure that you have at least 45 MB of space on your drive, internet connection and administrator rights.
 2. Download this repository.
