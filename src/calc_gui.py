@@ -33,7 +33,13 @@ root.resizable(False, False)
 root.tk.call('tk', 'scaling', 1.5)
 
 # fix for the icon to work both on Windows and Linux
-base_dir = os.path.dirname(__file__)
+import sys
+
+try:
+    base_dir = sys._MEIPASS
+except AttributeError:
+    base_dir = os.path.dirname(__file__)
+
 icon_paths = [
     os.path.join(base_dir, "icon", "calculator_icon.png"),
     os.path.join(base_dir, "icon", "calculator_icon.ico")
@@ -51,7 +57,7 @@ else:
     print(f"Icon files not found: {icon_paths}")
 #end 
 
-text_entry = tk.Text(root, height=3, fg="white",background=color1, width=20,font=("TkDefaultFont", 24))
+text_entry = tk.Text(root, height=3, fg="white", background=color1, width=20, font=("TkDefaultFont", 24))
 text_entry.grid(columnspan=8)
 text_entry.insert("1.0", "0")
 text_entry.config(state="disabled")

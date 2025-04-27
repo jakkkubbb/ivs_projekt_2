@@ -31,7 +31,7 @@ test:
 # Pack the project
 pack: clean doc
 	mkdir -p ../../$(TEAM_PACK_NAME)/doc && cp -a ./doc/. ../../$(TEAM_PACK_NAME)/doc
-	mkdir -p ../../$(TEAM_PACK_NAME)/install && cp -r ./setup/install/. ../../$(TEAM_PACK_NAME)/install
+	mkdir -p ../../$(TEAM_PACK_NAME)/install && cp -r ./setup/. ../../$(TEAM_PACK_NAME)/install
 	mkdir -p ../../$(TEAM_PACK_NAME)/repo && cp -a ../. ../../$(TEAM_PACK_NAME)/repo
 	cd ../.. && zip -qr $(TEAM_PACK_NAME)_wis.zip $(TEAM_PACK_NAME)
 	rm -rf ../../$(TEAM_PACK_NAME)
@@ -43,6 +43,7 @@ ispack: clean $(WIS_DOC_FILES) $(SRC_FILES) $(TEST_SRC_FILES)
 	mkdir -p ../../$(TEAM_PACK_NAME)/src/ && cp ./*.py ../../$(TEAM_PACK_NAME)/src
 	cp ../odevzdani.txt ../../$(TEAM_PACK_NAME)
 	cd ../.. && zip -qr $(TEAM_PACK_NAME)_is.zip $(TEAM_PACK_NAME)
+	rm -rf ../../$(TEAM_PACK_NAME)
 
 
 # Clean build artifacts
@@ -71,6 +72,8 @@ help:
 	@echo "  test    - Run tests using pytest"
 	@echo "  clean   - Clean build artifacts"
 	@echo "  pack    - Create a zip archive of the project"
+	@echo "  ispack  - Create a zip archive of the project for submission"
+	@echo "  install - Install dependencies"
 	@echo "  doc     - Generate documentation using Doxygen"
 	@echo "  stddev  - Calculate standard deviation from data"
 	@echo "  help    - Display this help message"
