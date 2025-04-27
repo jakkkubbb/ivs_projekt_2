@@ -47,20 +47,27 @@ def main():
     @details the function reads a list of numbers from the standard input
     @return the standard deviation of the list of numbers
     """
-    
-    data = []
-    
-    
-    data = [float(item) for item in input().strip().split() if item]
-    n = len(data)
+    while True:
+        data = []
+        
+        
+        data = [float(item) for item in input().strip().split() if item]
+        if not data:
 
-    if n < 2:
-        print("Atleast 2 numbers are required to calculate the standard deviation.")
-        return
+            break
 
-    print(stddev(data, n))
+        n = len(data)
 
-    input("Press Enter to exit...")
+        if n < 2:
+            print("Atleast 2 numbers are required to calculate the standard deviation.")
+            return
+
+        print(stddev(data, n))
+        print("Start typing numbers to calculate the standard deviation or press Enter to exit.")
+        #remove in unnecessary ^^
+
+
+        
 
 
 
