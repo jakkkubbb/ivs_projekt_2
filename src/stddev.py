@@ -13,6 +13,7 @@ import math_lib as ml
 import random
 
 
+
 def add(data):
     """
     @brief function to add a list of numbers
@@ -72,29 +73,22 @@ def main():
     @details the function reads a list of numbers from the standard input
     @return the standard deviation of the list of numbers
     """
+    
+    data = []
+    
+    for line in sys.stdin:
+        for item in line.strip().split():
+            try:
+                number = float(item)
+                data.append(number)
+            except ValueError:
+                continue
+    n = len(data)
+    if n < 2:
+        print("Atleast 2 numbers are required to calculate the standard deviation.")
+        return
 
-    while True:
-        data = []
-        
-        
-        data = [float(item) for item in input().strip().split() if item]
-        if not data:
-
-            break
-
-        n = len(data)
-
-        if n < 2:
-            print("Atleast 2 numbers are required to calculate the standard deviation.")
-            return
-
-        print(stddev(data, n))
-        print("Start typing numbers to calculate the standard deviation or press Enter to exit.")
-        #remove in unnecessary ^^
-
-
-        
-
+    print(stddev(data, n))
 
 
 def generate_test_data():
@@ -121,8 +115,9 @@ def generate_test_data():
             file2.write(f"{value}\n")
 
 
-cProfile.run('main()')
+#cProfile.run('main()')
 #generate_test_data()
+
 
 
 if __name__ == "__main__":

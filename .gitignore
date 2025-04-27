@@ -22,3 +22,6 @@ odevzdani.txt
 venv/
 src/exec.sh
 requirements.txt
+
+
+std.py
