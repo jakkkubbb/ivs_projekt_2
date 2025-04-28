@@ -84,7 +84,10 @@ def delete_last(entry_widget):
     
     current = entry_widget.get("1.0", "end").strip()
 
-    
+    if current == "Error":
+        entry_widget.delete("1.0", "end")
+        current = ""
+
     if len(current) >= 3:
         if current[-3:] == "ans":
             current = current[:-2]
@@ -129,6 +132,8 @@ def calculate(entry_widget):
     try:
         expression = entry_widget.get("1.0", "end").strip()
 
+        if not any(func in expression for func in ["power(", "sqrt(", "abs(", "fac("]):
+            expression = expression.replace(",", ".")
         
         expression = expression.replace("power", "power")  
         expression = expression.replace("sqrt", "root")  
