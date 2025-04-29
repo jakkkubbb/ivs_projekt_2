@@ -41,6 +41,7 @@ pack: clean doc
 ispack: clean $(WIS_DOC_FILES) $(SRC_FILES) $(TEST_SRC_FILES)
 	mkdir -p ../../$(TEAM_PACK_NAME) && cp ../hodnoceni.txt ../../$(TEAM_PACK_NAME)
 	mkdir -p ../../$(TEAM_PACK_NAME)/src/ && cp ./*.py ../../$(TEAM_PACK_NAME)/src
+	cp ../dokumentacia.pdf ../../$(TEAM_PACK_NAME)
 	cp ../odevzdani.txt ../../$(TEAM_PACK_NAME)
 	cd ../.. && zip -qr $(TEAM_PACK_NAME)_is.zip $(TEAM_PACK_NAME)
 	rm -rf ../../$(TEAM_PACK_NAME)
