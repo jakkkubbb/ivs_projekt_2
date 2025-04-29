@@ -73,22 +73,23 @@ def main():
     @details the function reads a list of numbers from the standard input
     @return the standard deviation of the list of numbers
     """
+    while True:
+        data = []
     
-    data = []
-    
-    for line in sys.stdin:
-        for item in line.strip().split():
-            try:
-                number = float(item)
-                data.append(number)
-            except ValueError:
-                continue
-    n = len(data)
-    if n < 2:
-        print("Atleast 2 numbers are required to calculate the standard deviation.")
-        return
-
-    print(stddev(data, n))
+        for line in sys.stdin:
+            for item in line.strip().split():
+                try:
+                    number = float(item)
+                    data.append(number)
+                except ValueError:
+                    continue
+        n = len(data)
+        
+        if n < 2:
+            print("Atleast 2 numbers are required to calculate the standard deviation.")
+        
+        else:
+            print(stddev(data, n))
 
 
 def generate_test_data():
