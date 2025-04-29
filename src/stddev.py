@@ -11,6 +11,7 @@ import cProfile
 import sys
 import math_lib as ml
 import random
+import os
 
 
 
@@ -73,9 +74,22 @@ def main():
     @details the function reads a list of numbers from the standard input
     @return the standard deviation of the list of numbers
     """
-    while True:
+    if os.isatty(sys.stdin.fileno()):
+        while True:
+            try:
+                line = input("> ").strip()
+                if line.lower() == "exit":
+                    break
+                data = [float(x) for x in line.split()]
+                if len(data) < 2:
+                    print("At least 2 numbers are required to calculate the standard deviation.")
+                else:
+                    print(stddev(data, len(data)))
+            except ValueError:
+                continue
+    else:
+        
         data = []
-    
         for line in sys.stdin:
             for item in line.strip().split():
                 try:
@@ -84,10 +98,8 @@ def main():
                 except ValueError:
                     continue
         n = len(data)
-        
         if n < 2:
-            print("Atleast 2 numbers are required to calculate the standard deviation.")
-        
+            print("At least 2 numbers are required to calculate the standard deviation.")
         else:
             print(stddev(data, n))
 
