@@ -1,0 +1,4 @@
+xzansim00 100 (Testy, Generovanie dokumentácie, Debugging)
+xgajdoa00 100 (Inštalátor, Používateľská dokumentácia, Testovanie na VM)
+xmizenj00 100 (GUI, Mockup, Profiling, Integrácia GUI a logiky MathLib)
+xbafalm00 100 (Makefile, Používateľská dokumentácia, MathLib)
